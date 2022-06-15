@@ -1,14 +1,14 @@
-import { ref, watch } from 'vue'
+import { ref, watch, type Ref } from 'vue'
 
 export const useDisplay = (
-  visible: boolean,
+  visible: Ref<boolean>,
   duration: number | string,
   type: 'block' | 'flex' | 'none' = 'block'
 ) => {
   const display = ref<'block' | 'flex' | 'none'>('none')
 
   watch(
-    () => visible,
+    () => visible.value,
     (val) => {
       if (val) {
         display.value = type

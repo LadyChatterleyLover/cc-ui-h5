@@ -9,6 +9,7 @@
         background,
         animationDuration
       }"
+      @click="handleClick"
     >
       <slot></slot>
     </div>
@@ -17,29 +18,29 @@
 
 <script setup lang="ts">
 import { useDisplay } from '@/hooks/useDisplay'
-import { computed, type CSSProperties } from 'vue'
-import './index.scss'
+import { ref, computed, watch, type CSSProperties } from 'vue'
 
 const props = withDefaults(
   defineProps<{
+    modelValue: boolean
     style?: CSSProperties
-    visible: boolean
     zIndex?: number | string
     duration?: number | string
     getContainer?: HTMLElement | (() => HTMLElement | null)
     background?: string
   }>(),
   {
-    visible: false,
+    modelValue: false,
     zIndex: 999,
     duration: 300,
     background: 'rgba(0,0,0,.5)'
   }
 )
 
-const emits = defineEmits(['click'])
+const emits = defineEmits(['click', 'update:modelValue'])
+const visible = ref<boolean>(false)
 
-const [display] = useDisplay(props.visible, props.duration)
+const [display] = useDisplay(visible, props.duration)
 
 const container = computed(() => {
   if (props.getContainer) {
@@ -54,6 +55,46 @@ const container = computed(() => {
 })
 
 const animationDuration = computed(() => Number(props.duration) / 1000 + 's')
+
+const handleClick = (e: MouseEvent) => {
+  emits('update:modelValue', !props.modelValue)
+  emits('click', e)
+}
+
+watch(
+  () => props.modelValue,
+  (val) => {
+    visible.value = val
+  },
+  { immediate: true }
+)
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.cc-overlay {
+  opacity: 0;
+  &-show {
+    animation: show linear forwards;
+  }
+  &-hidden {
+    animation: hidden linear forwards;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hidden {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+</style>

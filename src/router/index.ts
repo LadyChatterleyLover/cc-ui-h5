@@ -19,6 +19,30 @@ const router = createRouter({
       meta: {
         title: '图标'
       }
+    },
+    {
+      path: '/loading',
+      name: 'loading',
+      component: () => import('@/views/loading/index.vue'),
+      meta: {
+        title: '加载'
+      }
+    },
+    {
+      path: '/button',
+      name: 'button',
+      component: () => import('@/views/button/index.vue'),
+      meta: {
+        title: '按钮'
+      }
+    },
+    {
+      path: '/overlay',
+      name: 'overlay',
+      component: () => import('@/views/overlay/index.vue'),
+      meta: {
+        title: '遮罩层'
+      }
     }
   ]
 })
