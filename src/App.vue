@@ -5,5 +5,5 @@
 <script setup lang="ts"></script>
 
 <style lang="scss">
-@import './styles/base.scss';
+@import './styles/base.css';
 </style>

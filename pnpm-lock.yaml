@@ -3,15 +3,15 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^16.2.4
   '@commitlint/config-conventional': ^16.2.4
-  '@ricons/antd': ^0.12.0
-  '@ricons/fa': ^0.12.0
-  '@ricons/fluent': ^0.12.0
-  '@ricons/ionicons4': ^0.12.0
-  '@ricons/ionicons5': ^0.12.0
-  '@ricons/material': ^0.12.0
-  '@ricons/utils': ^0.1.6
   '@rushstack/eslint-patch': ^1.1.0
   '@types/node': ^16.11.36
+  '@vicons/antd': ^0.12.0
+  '@vicons/fa': ^0.12.0
+  '@vicons/fluent': ^0.12.0
+  '@vicons/ionicons4': ^0.12.0
+  '@vicons/ionicons5': ^0.12.0
+  '@vicons/material': ^0.12.0
+  '@vicons/utils': ^0.1.4
   '@vitejs/plugin-vue': ^2.3.3
   '@vitejs/plugin-vue-jsx': ^1.3.10
   '@vue/eslint-config-prettier': ^7.0.0
@@ -41,15 +41,15 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 16.3.0
   '@commitlint/config-conventional': 16.2.4
-  '@ricons/antd': 0.12.0
-  '@ricons/fa': 0.12.0
-  '@ricons/fluent': 0.12.0
-  '@ricons/ionicons4': 0.12.0
-  '@ricons/ionicons5': 0.12.0
-  '@ricons/material': 0.12.0
-  '@ricons/utils': 0.1.6
   '@rushstack/eslint-patch': 1.1.3
   '@types/node': 16.11.40
+  '@vicons/antd': 0.12.0
+  '@vicons/fa': 0.12.0
+  '@vicons/fluent': 0.12.0
+  '@vicons/ionicons4': 0.12.0
+  '@vicons/ionicons5': 0.12.0
+  '@vicons/material': 0.12.0
+  '@vicons/utils': 0.1.4_vue@3.2.37
   '@vitejs/plugin-vue': 2.3.3_vite@2.9.12+vue@3.2.37
   '@vitejs/plugin-vue-jsx': 1.3.10
   '@vue/eslint-config-prettier': 7.0.0_67jp3rdqyfy2wobpxhrxwalz5i
@@ -632,39 +632,6 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@ricons/antd/0.12.0:
-    resolution: {integrity: sha512-Frmd2Kn1cDBQxmrGNewy0c51gydOqq61oo/Ue0AhEiJguFdRjKdkOjBV9lkEVqgRHdN8/rdYV+iY5JvvYKQyuw==}
-    dev: true
-
-  /@ricons/fa/0.12.0:
-    resolution: {integrity: sha512-wpwn0jFIl9pnKznnROxuBLP2SmN+3HsR4ctqqAAxdIZ7hXOiC/LjUxtHBhko9Rb0PXYlH0f2QZUhL+F9ada2xQ==}
-    dev: true
-
-  /@ricons/fluent/0.12.0:
-    resolution: {integrity: sha512-q+mPtxwTCZBeNmIrnKQxHc08f4OvJOxaR1AiGbpJpTMAzm/b8ZdrL14wm5ArYJq+uDNpLynfBYi3CTWsHjRRgQ==}
-    dev: true
-
-  /@ricons/ionicons4/0.12.0:
-    resolution: {integrity: sha512-QMWmYMGJ4JpdwVj3zdhgprJVtLusPujxYQHLMQqwyWWpE7I910gOAdj22p6IepJ52+VyqPWxoIMOhfDgCc8/GA==}
-    dev: true
-
-  /@ricons/ionicons5/0.12.0:
-    resolution: {integrity: sha512-CzS43wP5XDZTBXmSvuW9XvTgiAeRWLHeeYoUtvHS/3h6yfjlr/T0vqdB8Zhqb7xPnto3li7yXZ4gU9VEgv4w7w==}
-    dev: true
-
-  /@ricons/material/0.12.0:
-    resolution: {integrity: sha512-fz4niIeTl0UG28BhB/zagLW4yjK2btWxT7cXKwizjOAZlchaNLE7wzg3fV1rQMaxs1ijjCV0uz/65xQvVSXZow==}
-    dev: true
-
-  /@ricons/utils/0.1.6:
-    resolution: {integrity: sha512-56lSprt9k6dPWFIMwfSQkBE/my0yxPfRS2agjmFsvtnHCjNVOMEvukpNQwK7woBVnkGDN61m8L0K4HNwagyjmA==}
-    peerDependencies:
-      react: '>=16.9.0'
-      react-dom: '>=16.9.0'
-    dependencies:
-      '@xicons/utils': 0.1.4
-    dev: true
-
   /@rollup/pluginutils/4.2.1:
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
     engines: {node: '>= 8.0.0'}
@@ -841,6 +808,39 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.28.0
       eslint-visitor-keys: 3.3.0
+    dev: true
+
+  /@vicons/antd/0.12.0:
+    resolution: {integrity: sha512-C0p6aO1EmGG1QHrqgUWQS1No20934OdWSRQshM5NIDK5H1On6tC26U0hT6Rmp40KfUsvhvX5YW8BoWJdNFifPg==}
+    dev: true
+
+  /@vicons/fa/0.12.0:
+    resolution: {integrity: sha512-g2PIeJLsTHUjt6bK63LxqC0uYQB7iu+xViJOxvp1s8b9/akpXVPVWjDTTsP980/0KYyMMe4U7F/aUo7wY+MsXA==}
+    dev: true
+
+  /@vicons/fluent/0.12.0:
+    resolution: {integrity: sha512-ATCiqPuiJ6RI5GBlD3BIpZ9Xw4MsCA4RpI5oR6MCti4quS4mX1Gp6N74FCzw7lgOj+80rV4HMKhZTVInwimpVQ==}
+    dev: true
+
+  /@vicons/ionicons4/0.12.0:
+    resolution: {integrity: sha512-i+7YwlpCrqD6m9esbZLy1bpVQlh4CKugtS3OzgfNw6BLTQQK6HT7drktaJgcESj/BTr4avdNbAtMQXx56wSVMg==}
+    dev: true
+
+  /@vicons/ionicons5/0.12.0:
+    resolution: {integrity: sha512-Iy1EUVRpX0WWxeu1VIReR1zsZLMc4fqpt223czR+Rpnrwu7pt46nbnC2ycO7ItI/uqDLJxnbcMC7FujKs9IfFA==}
+    dev: true
+
+  /@vicons/material/0.12.0:
+    resolution: {integrity: sha512-chv1CYAl8P32P3Ycwgd5+vw/OFNc2mtkKdb1Rw4T5IJmKy6GVDsoUKV3N2l208HATn7CCQphZtuPDdsm7K2kmA==}
+    dev: true
+
+  /@vicons/utils/0.1.4_vue@3.2.37:
+    resolution: {integrity: sha512-OHI19qVNN6i+uPQ+Y3f2s0dUxwsYnOCcKBW7XOU4yXXO1aU3ZoKpblCc3+4N0qmgoJs5rWKRAaMisipqEXJwAg==}
+    peerDependencies:
+      vue: ^3.0.6
+    dependencies:
+      '@xicons/utils': 0.1.4
+      vue: 3.2.37
     dev: true
 
   /@vitejs/plugin-vue-jsx/1.3.10:
