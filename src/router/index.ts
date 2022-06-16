@@ -51,6 +51,14 @@ const router = createRouter({
       meta: {
         title: '弹出层'
       }
+    },
+    {
+      path: '/layout',
+      name: 'layout',
+      component: () => import('@/views/layout/index.vue'),
+      meta: {
+        title: '布局'
+      }
     }
   ]
 })
