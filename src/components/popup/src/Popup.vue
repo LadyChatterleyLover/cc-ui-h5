@@ -3,7 +3,6 @@
     v-model="visible"
     :background="overlay ? 'rgba(0,0,0,.5)' : '#fff'"
     :getContainer="container"
-    :visible="visible"
     :duration="duration"
     :closeOnClickOverlay="closeOnClickOverlay"
     @click="handleClick"

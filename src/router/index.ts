@@ -67,6 +67,14 @@ const router = createRouter({
       meta: {
         title: '间距'
       }
+    },
+    {
+      path: '/dialog',
+      name: 'dialog',
+      component: () => import('@/views/dialog/index.vue'),
+      meta: {
+        title: '弹出框'
+      }
     }
   ]
 })

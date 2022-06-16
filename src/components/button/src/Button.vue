@@ -8,6 +8,7 @@
        ${round ? 'rounded-full' : 'rounded'}`
     ]"
     :type="nativeType"
+    :style="{ ...style }"
     @click="handleClick"
   >
     <cc-loading v-if="loading" :type="loadingType"></cc-loading>
