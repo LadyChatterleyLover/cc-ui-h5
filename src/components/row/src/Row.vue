@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, computed, provide } from 'vue'
+import { computed, provide } from 'vue'
 import type { JustifyProps } from '@/types'
 
 const props = withDefaults(

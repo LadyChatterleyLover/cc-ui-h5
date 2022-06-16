@@ -72,6 +72,11 @@ const list: ListItem[] = [
         label: 'Toast',
         title: '轻提示',
         url: '/toast'
+      },
+      {
+        label: 'Space',
+        title: '间距',
+        url: '/space'
       }
     ]
   },

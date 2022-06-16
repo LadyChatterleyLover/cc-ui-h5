@@ -59,6 +59,14 @@ const router = createRouter({
       meta: {
         title: '布局'
       }
+    },
+    {
+      path: '/space',
+      name: 'space',
+      component: () => import('@/views/space/index.vue'),
+      meta: {
+        title: '间距'
+      }
     }
   ]
 })

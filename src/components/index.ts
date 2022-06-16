@@ -6,8 +6,9 @@ import Button from './button'
 import Popup from './popup'
 import Row from './row'
 import Col from './col'
+import Space from './space'
 
-const components = [Icon, Overlay, Loading, Button, Popup, Row, Col]
+const components = [Icon, Overlay, Loading, Button, Popup, Row, Col, Space]
 
 export default {
   install(app: App) {
