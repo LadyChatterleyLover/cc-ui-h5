@@ -75,6 +75,14 @@ const router = createRouter({
       meta: {
         title: '弹出框'
       }
+    },
+    {
+      path: '/toast',
+      name: 'toast',
+      component: () => import('@/views/toast/index.vue'),
+      meta: {
+        title: '轻提示'
+      }
     }
   ]
 })

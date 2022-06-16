@@ -8,6 +8,7 @@ import Row from './row'
 import Col from './col'
 import Space from './space'
 import Dialog from './dialog'
+import Toast from './toast'
 
 const components = [
   Icon,
@@ -18,7 +19,8 @@ const components = [
   Row,
   Col,
   Space,
-  Dialog
+  Dialog,
+  Toast,
 ]
 
 export default {
