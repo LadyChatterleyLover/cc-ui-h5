@@ -43,6 +43,14 @@ const router = createRouter({
       meta: {
         title: '遮罩层'
       }
+    },
+    {
+      path: '/popup',
+      name: 'popup',
+      component: () => import('@/views/popup/index.vue'),
+      meta: {
+        title: '弹出层'
+      }
     }
   ]
 })

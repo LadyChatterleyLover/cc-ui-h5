@@ -1,19 +1,21 @@
 <template>
-  <teleport :to="container">
-    <div
-      class="cc-overlay fixed top-0 bottom-0 left-0 right-0"
-      :class="[`${visible ? 'cc-overlay-show' : 'cc-overlay-hidden'}`]"
-      :style="{
-        display,
-        zIndex: Number(zIndex),
-        background,
-        animationDuration
-      }"
-      @click="handleClick"
-    >
-      <slot></slot>
-    </div>
-  </teleport>
+  <div>
+    <teleport :to="container">
+      <div
+        class="cc-overlay fixed top-0 bottom-0 left-0 right-0"
+        :class="[`${visible ? 'cc-overlay-show' : 'cc-overlay-hidden'}`]"
+        :style="{
+          display,
+          zIndex: Number(zIndex),
+          background,
+          animationDuration
+        }"
+        @click="handleClick"
+      >
+        <slot></slot>
+      </div>
+    </teleport>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -26,11 +28,13 @@ const props = withDefaults(
     style?: CSSProperties
     zIndex?: number | string
     duration?: number | string
+    closeOnClickOverlay?: boolean
     getContainer?: HTMLElement | (() => HTMLElement | null)
     background?: string
   }>(),
   {
     modelValue: false,
+    closeOnClickOverlay: false,
     zIndex: 999,
     duration: 300,
     background: 'rgba(0,0,0,.5)'
@@ -57,6 +61,7 @@ const container = computed(() => {
 const animationDuration = computed(() => Number(props.duration) / 1000 + 's')
 
 const handleClick = (e: MouseEvent) => {
+  if (props.closeOnClickOverlay) return
   emits('update:modelValue', !props.modelValue)
   emits('click', e)
 }
