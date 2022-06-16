@@ -83,6 +83,14 @@ const router = createRouter({
       meta: {
         title: '轻提示'
       }
+    },
+    {
+      path: '/divider',
+      name: 'divider',
+      component: () => import('@/views/divider/index.vue'),
+      meta: {
+        title: '分割线'
+      }
     }
   ]
 })

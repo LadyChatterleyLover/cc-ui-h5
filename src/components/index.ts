@@ -9,6 +9,7 @@ import Col from './col'
 import Space from './space'
 import Dialog from './dialog'
 import Toast from './toast'
+import Divider from './divider'
 
 const components = [
   Icon,
@@ -21,6 +22,7 @@ const components = [
   Space,
   Dialog,
   Toast,
+  Divider
 ]
 
 export default {
