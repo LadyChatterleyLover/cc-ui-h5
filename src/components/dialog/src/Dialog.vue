@@ -93,7 +93,7 @@ const props = withDefaults(
     onMaskClick?: boolean
     round?: boolean
     getContainer?: HTMLElement | (() => HTMLElement) | null
-    style?: CSSProperties,
+    style?: CSSProperties
     close?: (e: MouseEvent) => void
   }>(),
   {

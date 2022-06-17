@@ -1,7 +1,7 @@
 <template>
   <div>
     <teleport :to="container">
-      <transition name="overlay">
+      <transition name="cc-overlay">
         <div
           v-show="visible"
           class="fixed top-0 bottom-0 left-0 right-0"
@@ -75,12 +75,12 @@ watch(
 </script>
 
 <style scoped lang="scss">
-.overlay-enter-active,
-.overlay-leave-active {
+.cc-overlay-enter-active,
+.cc-overlay-leave-active {
   transition: all linear;
 }
-.overlay-enter-from,
-.overlay-leave-to {
+.cc-overlay-enter-from,
+.cc-overlay-leave-to {
   opacity: 0;
 }
 </style>
