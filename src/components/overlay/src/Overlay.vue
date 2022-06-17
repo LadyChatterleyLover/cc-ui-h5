@@ -1,25 +1,26 @@
 <template>
   <div>
     <teleport :to="container">
-      <div
-        class="cc-overlay fixed top-0 bottom-0 left-0 right-0"
-        :class="[`${visible ? 'cc-overlay-show' : 'cc-overlay-hidden'}`]"
-        :style="{
-          display,
-          zIndex: Number(zIndex),
-          background,
-          animationDuration
-        }"
-        @click="handleClick"
-      >
-        <slot></slot>
-      </div>
+      <transition name="overlay">
+        <div
+          v-show="visible"
+          class="fixed top-0 bottom-0 left-0 right-0"
+          :class="[`${visible ? 'cc-overlay-show' : 'cc-overlay-hidden'}`]"
+          :style="{
+            zIndex: Number(zIndex),
+            background,
+            transitionDuration
+          }"
+          @click="handleClick"
+        >
+          <slot></slot>
+        </div>
+      </transition>
     </teleport>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useDisplay } from '@/hooks/useDisplay'
 import { ref, computed, watch, type CSSProperties } from 'vue'
 
 const props = withDefaults(
@@ -44,8 +45,6 @@ const props = withDefaults(
 const emits = defineEmits(['click', 'update:modelValue'])
 const visible = ref<boolean>(false)
 
-const [display] = useDisplay(visible, props.duration)
-
 const container = computed(() => {
   if (props.getContainer) {
     if (typeof props.getContainer === 'function') {
@@ -58,7 +57,7 @@ const container = computed(() => {
   }
 })
 
-const animationDuration = computed(() => Number(props.duration) / 1000 + 's')
+const transitionDuration = computed(() => Number(props.duration) / 1000 + 's')
 
 const handleClick = (e: MouseEvent) => {
   if (props.closeOnClickOverlay) return
@@ -76,30 +75,12 @@ watch(
 </script>
 
 <style scoped lang="scss">
-.cc-overlay {
+.overlay-enter-active,
+.overlay-leave-active {
+  transition: all linear;
+}
+.overlay-enter-from,
+.overlay-leave-to {
   opacity: 0;
-  &-show {
-    animation: show linear forwards;
-  }
-  &-hidden {
-    animation: hidden linear forwards;
-  }
-}
-
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes hidden {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
 </style>
