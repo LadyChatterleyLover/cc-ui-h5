@@ -5,7 +5,6 @@
         <div
           v-show="visible"
           class="fixed top-0 bottom-0 left-0 right-0"
-          :class="[`${visible ? 'cc-overlay-show' : 'cc-overlay-hidden'}`]"
           :style="{
             zIndex: Number(zIndex),
             background,

@@ -15,40 +15,43 @@ const Toast = (config: ToastProps) => {
   const dom = document.createElement('div')
   document.body.appendChild(dom)
   let app: any = null
+
   let currentConfig = {
     ...config,
     visible: true,
     close: () => {
       setTimeout(() => {
         close()
+      }, (config.duration = 2000))
+      setTimeout(() => {
         destroy()
-      }, Number((config.duration = 2000)))
+      }, Number((config.duration = 2300)))
     }
   }
 
   function render(props: ToastProps) {
     app = createApp(CcToast, { ...props })
+    app.use(CcUI)
+    app.mount(dom)
   }
 
   function destroy() {
-    setTimeout(() => {
-      app?.unmount()
-      if (dom!.parentNode) {
-        dom?.parentNode.removeChild(dom)
-      }
-    }, 300)
+    app?.unmount()
+    if (dom!.parentNode) {
+      dom?.parentNode.removeChild(dom)
+    }
   }
 
   function close() {
-    render({
+    app = render({
       ...currentConfig,
       visible: false
     })
+    app.use(CcUI)
+    app.mount(dom)
   }
 
   render(currentConfig)
-  app.use(CcUI)
-  app.mount(dom)
 }
 
 const useToastLoading = (config: ToastProps) => {
